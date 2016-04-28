@@ -1,5 +1,7 @@
 # Webpack + React + Bootstrap Example
 
+ 这里是用webpack构造的一个列表，资源来源于cnnode。这个很有必要好好review一下 2016.4.28
+
 ## 安装
 
 ```bash

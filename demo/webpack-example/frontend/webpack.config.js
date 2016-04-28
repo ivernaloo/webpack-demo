@@ -12,7 +12,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     test: [
-      'webpack-dev-server/client?http://0.0.0.0:3000',
+      'webpack-dev-server/client?http://0.0.0.0:3002',
       'webpack/hot/only-dev-server',
       path.resolve(__dirname, './test.js'),
     ],
@@ -20,7 +20,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: '[name].js',
-    publicPath: '/webpack',
+    publicPath: 'webpack',
   },
   module: {
     loaders: [
@@ -45,14 +45,15 @@ module.exports = {
   ],
   devServer: {
     contentBase: __dirname,
-    port: 3000,
+    port: 3002,
     inline: true,
+    host:'0.0.0.0',
     historyApiFallback: true,
     stats: { colors: true },
     hot: true,
-    proxy: {
-      '*': 'http://127.0.0.1:3001',
-    }
+    // proxy: {
+    //   '*': 'http://127.0.0.1:3001',
+    // }
   },
   babel: {
     plugins: ['transform-runtime'],
